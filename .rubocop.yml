@@ -1,10 +1,9 @@
 ---
 require:
 - rubocop-rspec
-- rubocop-i18n
 AllCops:
   DisplayCopNames: true
-  TargetRubyVersion: '2.1'
+  TargetRubyVersion: '2.4'
   Include:
   - "./**/*.rb"
   Exclude:
@@ -86,7 +85,7 @@ Style/Documentation:
   - lib/puppet/parser/functions/**/*
   - spec/**/*
 Style/WordArray:
-  EnforcedStyle: brackets
+  EnforcedStyle: percent
 Style/CollectionMethods:
   Enabled: true
 Style/MethodCalledOnDoEndBlock:
