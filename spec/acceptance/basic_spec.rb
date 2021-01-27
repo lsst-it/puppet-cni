@@ -14,6 +14,7 @@ describe 'cni class' do
   %w[
     /opt/cni
     /opt/cni/bin
+    /opt/cni/plugins
   ].each do |d|
     describe file(d) do
       it { is_expected.to be_directory }

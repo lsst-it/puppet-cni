@@ -1,6 +1,7 @@
 class cni {
   $install_root = '/opt/cni'
-  $bin_path = "${install_root}/bin"
+  $bin_path     = "${install_root}/bin"
+  $plugins_path = "${install_root}/plugins"
 
   $stat = {
     owner => 'root',
@@ -11,5 +12,6 @@ class cni {
   ensure_resources('file', {
       $install_root => $stat + { ensure => directory },
       $bin_path     => $stat + { ensure => directory },
+      $plugins_path => $stat + { ensure => directory },
   })
 }
