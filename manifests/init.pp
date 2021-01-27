@@ -13,7 +13,7 @@ class cni {
   ensure_resources('file', {
       $install_root => $stat + { ensure => directory },
       $bin_path     => $stat + { ensure => directory },
-      $plugins_path => $stat + { ensure => directory },
+      $plugins_path => $stat + { ensure => directory, purge => true },
       $dl_path      => $stat + { ensure => directory },
   })
 }
