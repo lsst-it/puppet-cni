@@ -10,6 +10,7 @@ describe 'cni' do
       /opt/cni
       /opt/cni/bin
       /opt/cni/plugins
+      /opt/cni/plugins/dl
     ].each do |d|
       it do
         is_expected.to contain_file(d).with(
