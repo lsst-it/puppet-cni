@@ -1,5 +1,6 @@
 class cni {
-  $install_path = '/opt/cni/bin'
+  $install_root = '/opt/cni'
+  $bin_path = "${install_root}/bin"
 
   $stat = {
     owner => 'root',
@@ -8,7 +9,7 @@ class cni {
   }
 
   ensure_resources('file', {
-      '/opt/cni'    => $stat + { ensure => directory },
-      $install_path => $stat + { ensure => directory },
+      $install_root => $stat + { ensure => directory },
+      $bin_path     => $stat + { ensure => directory },
   })
 }
