@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe 'cni::plugins::install' do
+describe 'cni::plugins' do
   let(:facts) do
     {
       os: {

@@ -2,11 +2,11 @@
 
 require 'spec_helper_acceptance'
 
-describe 'cni::plugins::install class' do
+describe 'cni::plugins class' do
   describe 'without any parameters' do
     let(:pp) do
       <<-EOS
-      include ::cni::plugins::install
+      include ::cni::plugins
       EOS
     end
 
@@ -51,7 +51,7 @@ describe 'cni::plugins::install class' do
     context '0.8.5' do
       let(:pp) do
         <<-EOS
-        class { cni::plugins::install:
+        class { cni::plugins:
           version       => '0.8.5',
           checksum_type => 'sha256',
           checksum      => 'bd682ffcf701e8f83283cdff7281aad0c83b02a56084d6e601216210732833f9',
@@ -99,7 +99,7 @@ describe 'cni::plugins::install class' do
     context '0.9.0' do
       let(:pp) do
         <<-EOS
-        class { cni::plugins::install:
+        class { cni::plugins:
           version       => '0.9.0',
           checksum_type => 'sha256',
           checksum      => '58a58d389895ba9f9bbd3ef330f186c0bb7484136d0bfb9b50152eed55d9ec24',
