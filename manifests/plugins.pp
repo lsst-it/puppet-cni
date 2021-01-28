@@ -4,5 +4,8 @@ class cni::plugins (
   String $checksum_type = 'sha256',
 ) {
   require cni
+  # the parse order is signifigant for $install_path... it must be evaluated after ::cni but
+  # before ::cni::plugins::install
+  $install_path = "${cni::plugins_path}/${version}"
   contain cni::plugins::install
 }

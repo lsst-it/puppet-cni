@@ -6,6 +6,7 @@ class cni::plugins::install {
   $version       = $cni::plugins::version
   $checksum      = $cni::plugins::checksum
   $checksum_type = $cni::plugins::checksum_type
+  $install_path  = $cni::plugins::install_path
 
   $uname        = 'linux'
   $arch         = 'amd64'
@@ -13,7 +14,6 @@ class cni::plugins::install {
   $slug         = "cni-plugins-${uname}-${arch}-v${version}"
   $archive_file = "${slug}.tgz"
   $source       = "${base_url}/${archive_file}"
-  $install_path = "${cni::plugins_path}/${version}"
 
   file { $install_path:
     ensure => directory,
