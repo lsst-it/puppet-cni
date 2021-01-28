@@ -47,7 +47,7 @@ describe 'cni::plugins class' do
     end
   end
 
-  describe 'with parameters' do
+  describe 'with verison params' do
     context '0.8.5' do
       let(:pp) do
         <<-EOS
@@ -143,5 +143,31 @@ describe 'cni::plugins class' do
         end
       end
     end  # 0.9.0
-  end # with parameters
+  end # with version params
+
+  describe 'with enable param' do
+    let(:pp) do
+      <<-EOS
+      class { cni::plugins:
+        enable => ['dhcp', 'macvlan'],
+      }
+      EOS
+    end
+
+    it_behaves_like 'an idempotent resource'
+
+    describe file('/opt/cni/bin/dhcp') do
+      it { is_expected.to be_symlink }
+      it { is_expected.to be_owned_by 'root' }
+      it { is_expected.to be_grouped_into 'root' }
+      it { is_expected.to be_linked_to '/opt/cni/plugins/0.8.5/dhcp' }
+    end
+
+    describe file('/opt/cni/bin/macvlan') do
+      it { is_expected.to be_symlink }
+      it { is_expected.to be_owned_by 'root' }
+      it { is_expected.to be_grouped_into 'root' }
+      it { is_expected.to be_linked_to '/opt/cni/plugins/0.8.5/macvlan' }
+    end
+  end
 end
