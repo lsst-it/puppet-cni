@@ -3,7 +3,7 @@
 require 'spec_helper_acceptance'
 
 describe 'cni::plugins class' do
-  describe 'without any parameters' do
+  context 'without any parameters', :cleanup_opt do
     let(:pp) do
       <<-EOS
       include ::cni::plugins
@@ -47,8 +47,8 @@ describe 'cni::plugins class' do
     end
   end
 
-  describe 'with verison params' do
-    context '0.8.5' do
+  context 'with verison params' do
+    context '0.8.5', :cleanup_opt do
       let(:pp) do
         <<-EOS
         class { cni::plugins:
@@ -96,7 +96,7 @@ describe 'cni::plugins class' do
       end
     end  # 0.8.5
 
-    context '0.9.0' do
+    context '0.9.0', :cleanup_opt do
       let(:pp) do
         <<-EOS
         class { cni::plugins:
@@ -145,7 +145,7 @@ describe 'cni::plugins class' do
     end  # 0.9.0
   end # with version params
 
-  describe 'with enable param' do
+  context 'with enable param', :cleanup_opt do
     let(:pp) do
       <<-EOS
       class { cni::plugins:
