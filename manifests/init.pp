@@ -1,7 +1,14 @@
-class cni {
-  $install_root = '/opt/cni'
-  $bin_path     = "${install_root}/bin"
-  $plugins_path = "${install_root}/plugins"
+#
+# @summary Installs Container Network Interface software
+#
+# @param base_path
+#   Base path under which to install software.
+#
+class cni (
+  Stdlib::Absolutepath $base_path = '/opt/cni',
+) {
+  $bin_path     = "${base_path}/bin"
+  $plugins_path = "${base_path}/plugins"
   $dl_path      = "${plugins_path}/dl"
 
   $stat = {
@@ -11,7 +18,7 @@ class cni {
   }
 
   ensure_resources('file', {
-      $install_root => $stat + { ensure => directory },
+      $base_path    => $stat + { ensure => directory },
       $bin_path     => $stat + { ensure => directory },
       $plugins_path => $stat + { ensure => directory, purge => true },
       $dl_path      => $stat + { ensure => directory },
