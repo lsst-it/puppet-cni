@@ -2,16 +2,16 @@
 
 require 'voxpupuli/acceptance/spec_helper_acceptance'
 
-def cleanup
+def cleanup_opt
   on hosts, 'rm -rf /opt/cni'
 end
 
 RSpec.configure do |c|
   c.before(:context, :cleanup_opt) do
-    cleanup
+    cleanup_opt
   end
   c.after(:context, :cleanup_opt) do
-    cleanup
+    cleanup_opt
   end
 end
 

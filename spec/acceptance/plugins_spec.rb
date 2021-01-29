@@ -143,6 +143,69 @@ describe 'cni::plugins class' do
         end
       end
     end  # 0.9.0
+
+    context '(version change)', :cleanup_opt do
+      context '0.8.5' do
+        let(:pp) do
+          <<-EOS
+          class { cni::plugins: }
+          EOS
+        end
+
+        it_behaves_like 'an idempotent resource'
+
+        %w[
+          /opt/cni/plugins/dl/cni-plugins-linux-amd64-v0.8.5.tgz
+          /opt/cni/plugins/0.8.5
+        ].each do |d|
+          describe file(d) do
+            it { is_expected.to exist }
+          end
+        end
+
+        %w[
+          /opt/cni/plugins/dl/cni-plugins-linux-amd64-v0.9.0.tgz
+          /opt/cni/plugins/0.9.0
+        ].each do |d|
+          describe file(d) do
+            it { is_expected.not_to exist }
+          end
+        end
+      end # 0.8.5
+
+      context '0.9.0' do
+        let(:pp) do
+          <<-EOS
+          class { cni::plugins:
+            version       => '0.9.0',
+            checksum_type => 'sha256',
+            checksum      => '58a58d389895ba9f9bbd3ef330f186c0bb7484136d0bfb9b50152eed55d9ec24',
+          }
+          EOS
+        end
+
+        it_behaves_like 'an idempotent resource'
+
+        %w[
+          /opt/cni/plugins/0.8.5
+        ].each do |d|
+          describe file(d) do
+            it { is_expected.not_to exist }
+          end
+        end
+
+        # previous release tarball remains cached
+        %w[
+          /opt/cni/plugins/dl/cni-plugins-linux-amd64-v0.8.5.tgz
+          /opt/cni/plugins/dl/cni-plugins-linux-amd64-v0.9.0.tgz
+          /opt/cni/plugins/0.9.0
+        ].each do |d|
+          describe file(d) do
+            it { is_expected.to exist }
+          end
+        end
+      end # 0.9.0
+    end  # (version change)
   end # with version params
 
   context 'with enable param', :cleanup_opt do

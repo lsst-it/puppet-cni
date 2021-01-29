@@ -12,15 +12,22 @@ class cni (
   $dl_path      = "${plugins_path}/dl"
 
   $stat = {
-    owner => 'root',
-    group => 'root',
-    mode  => '0755',
+    ensure => directory,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0755',
+  }
+
+  $purge = {
+    recurse => true,
+    purge   => true,
+    force   => true,
   }
 
   ensure_resources('file', {
-      $base_path    => $stat + { ensure => directory },
-      $bin_path     => $stat + { ensure => directory },
-      $plugins_path => $stat + { ensure => directory, purge => true },
-      $dl_path      => $stat + { ensure => directory },
+      $base_path    => $stat,
+      $bin_path     => $stat,
+      $plugins_path => $stat + $purge,
+      $dl_path      => $stat,
   })
 }
