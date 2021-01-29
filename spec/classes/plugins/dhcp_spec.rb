@@ -20,8 +20,11 @@ describe 'cni::plugins::dhcp' do
       is_expected.to contain_systemd__unit_file('cni-dhcp.service').with(
         content: %r{ExecStart=/opt/cni/bin/dhcp daemon},
       ).that_comes_before('Service[cni-dhcp]')
+      .that_requires('Systemd::Unit_file[cni-dhcp.socket]')
     end
-    it { is_expected.to contain_systemd__unit_file('cni-dhcp.socket') }
+    it do
+      is_expected.to contain_systemd__unit_file('cni-dhcp.socket')
+    end
     it do
       is_expected.to contain_service('cni-dhcp').with(
         ensure: 'running',

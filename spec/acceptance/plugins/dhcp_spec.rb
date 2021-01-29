@@ -30,7 +30,7 @@ describe 'cni::plugins::dhcp class' do
       its(:content) { is_expected.to match %r{ListenStream=/run/cni/dhcp.sock} }
     end
     describe file('/run/cni/dhcp.sock') do
-      it { is_expected.to be_file }
+      it { is_expected.to be_socket }
       it { is_expected.to be_owned_by 'root' }
       it { is_expected.to be_grouped_into 'root' }
     end
