@@ -1,3 +1,6 @@
+#
+# @summary private class
+#
 class cni::plugins::install {
   assert_private()
 

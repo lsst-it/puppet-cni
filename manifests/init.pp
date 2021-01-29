@@ -1,5 +1,5 @@
 #
-# @summary Installs Container Network Interface software
+# @summary Install Container Network Interface software
 #
 # @param base_path
 #   Base path under which to install software.

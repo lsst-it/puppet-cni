@@ -1,3 +1,6 @@
+#
+# @summary Install the cni-dhcp service
+#
 class cni::plugins::dhcp {
   include cni::plugins
 
