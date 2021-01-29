@@ -205,7 +205,7 @@ describe 'cni::plugins class' do
           end
         end
       end # 0.9.0
-    end  # (version change)
+    end # (version change)
   end # with version params
 
   context 'with enable param', :cleanup_opt do

@@ -26,6 +26,7 @@ describe 'cni::plugins' do
         ],
       }
     end
+
     it { is_expected.to compile.with_all_deps }
 
     it { is_expected.to contain_cni__plugins__enable('macvlan') }

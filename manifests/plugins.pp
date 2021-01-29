@@ -12,7 +12,7 @@ class cni::plugins (
 
   if $enable {
     $enable.each |String $p| {
-      cni::plugins::enable { $p: }
+      ensure_resources('cni::plugins::enable', { $p => {} })
     }
   }
 }

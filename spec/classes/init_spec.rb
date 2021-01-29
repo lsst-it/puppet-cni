@@ -29,6 +29,7 @@ describe 'cni' do
         base_path: '/tmp/cni',
       }
     end
+
     it { is_expected.to compile.with_all_deps }
 
     %w[
