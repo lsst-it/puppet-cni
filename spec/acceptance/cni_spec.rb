@@ -17,6 +17,7 @@ describe 'cni class' do
       /opt/cni/bin
       /opt/cni/plugins
       /opt/cni/plugins/dl
+      /run/cni
     ].each do |d|
       describe file(d) do
         it { is_expected.to be_directory }
@@ -45,6 +46,7 @@ describe 'cni class' do
       "#{basedir}/bin",
       "#{basedir}/plugins",
       "#{basedir}/plugins/dl",
+      '/run/cni',
     ].each do |d|
       describe file(d) do
         it { is_expected.to be_directory }

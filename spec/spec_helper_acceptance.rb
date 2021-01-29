@@ -4,6 +4,7 @@ require 'voxpupuli/acceptance/spec_helper_acceptance'
 
 def cleanup_opt
   on hosts, 'rm -rf /opt/cni'
+  on hosts, 'rm -rf /run/cni'
 end
 
 RSpec.configure do |c|

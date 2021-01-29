@@ -11,6 +11,7 @@ describe 'cni' do
       /opt/cni/bin
       /opt/cni/plugins
       /opt/cni/plugins/dl
+      /run/cni
     ].each do |d|
       it do
         is_expected.to contain_file(d).with(
@@ -37,6 +38,7 @@ describe 'cni' do
       /tmp/cni/bin
       /tmp/cni/plugins
       /tmp/cni/plugins/dl
+      /run/cni
     ].each do |d|
       it do
         is_expected.to contain_file(d).with(

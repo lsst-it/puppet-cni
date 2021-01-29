@@ -10,6 +10,7 @@ class cni (
   $bin_path     = "${base_path}/bin"
   $plugins_path = "${base_path}/plugins"
   $dl_path      = "${plugins_path}/dl"
+  $run_path     = '/run/cni'
 
   $stat = {
     ensure => directory,
@@ -29,5 +30,6 @@ class cni (
       $bin_path     => $stat,
       $plugins_path => $stat + $purge,
       $dl_path      => $stat,
+      $run_path     => $stat,
   })
 }
