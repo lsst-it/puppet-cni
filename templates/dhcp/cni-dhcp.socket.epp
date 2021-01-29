@@ -11,4 +11,4 @@ SocketGroup=root
 RemoveOnStop=true
 
 [Install]
-WantedBy=sockets.targetantedBy=multi-user.target
+WantedBy=sockets.target
