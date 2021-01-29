@@ -2,9 +2,9 @@
   "name": "lsst-cni",
   "version": "0.1.0",
   "author": "AURA/LSST/Rubin Observatory",
-  "summary": "",
+  "summary": "CNI module",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/lsst-it/puppet-cni",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
