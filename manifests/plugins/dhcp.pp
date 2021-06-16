@@ -17,8 +17,7 @@ class cni::plugins::dhcp {
     content => epp("${module_name}/dhcp/cni-dhcp.service.epp", $epp_vars),
   }
   ~> service { 'cni-dhcp':
-    ensure  => 'running',
-    enable  => true,
-    require => Class['systemd::systemctl::daemon_reload'],
+    ensure => 'running',
+    enable => true,
   }
 }

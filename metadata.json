@@ -1,6 +1,6 @@
 {
   "name": "lsst-cni",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "author": "AURA/LSST/Rubin Observatory",
   "summary": "CNI module",
   "license": "Apache-2.0",
@@ -16,7 +16,7 @@
     },
     {
       "name": "camptocamp/systemd",
-      "version_requirement": ">= 2.0.0 < 3.0.0"
+      "version_requirement": ">= 2.0.0 < 4.0.0"
     }
   ],
   "operatingsystem_support": [
@@ -35,7 +35,7 @@
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "8"
+        "7"
       ]
     },
     {
