@@ -5,9 +5,9 @@ require 'spec_helper_acceptance'
 describe 'cni class' do
   context 'without any parameters', :cleanup_opt do
     let(:pp) do
-      <<-EOS
+      <<-PP
       include cni
-      EOS
+      PP
     end
 
     it_behaves_like 'an idempotent resource'
@@ -32,11 +32,11 @@ describe 'cni class' do
     basedir = default.tmpdir('cni')
 
     let(:pp) do
-      <<-EOS
+      <<-PP
       class { cni:
         base_path => '#{basedir}',
       }
-      EOS
+      PP
     end
 
     it_behaves_like 'an idempotent resource'

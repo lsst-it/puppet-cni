@@ -22,7 +22,7 @@ default_fact_files.each do |f|
 
   begin
     default_facts.merge!(YAML.safe_load(File.read(f), [], [], true))
-  rescue => e
+  rescue StandardError => e
     RSpec.configuration.reporter.message "WARNING: Unable to load #{f}: #{e}"
   end
 end
@@ -41,8 +41,6 @@ RSpec.configure do |c|
     Puppet.settings[:strict_variables] = true
   end
   c.filter_run_excluding(bolt: true) unless ENV['GEM_BOLT']
-  c.after(:suite) do
-  end
 end
 
 # Ensures that a module is defined

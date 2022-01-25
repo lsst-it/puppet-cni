@@ -3,11 +3,11 @@
 require 'spec_helper_acceptance'
 
 describe 'cni::plugins::enable define' do
-  context 'macvlan', :cleanup_opt do
+  context 'with macvlan', :cleanup_opt do
     let(:pp) do
-      <<-EOS
+      <<-PP
       cni::plugins::enable { 'macvlan': }
-      EOS
+      PP
     end
 
     it_behaves_like 'an idempotent resource'
