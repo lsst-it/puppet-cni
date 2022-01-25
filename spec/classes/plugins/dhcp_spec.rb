@@ -5,6 +5,8 @@ require 'spec_helper'
 describe 'cni::plugins::dhcp' do
   let(:facts) do
     {
+      osfamily: 'RedHat',
+      operatingsystem: 'CentOS',
       os: {
         family: 'RedHat',
       },
