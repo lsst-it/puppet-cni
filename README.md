@@ -27,8 +27,8 @@ in `/opt/cni/bin`.
 ```puppet
 class { 'cni::plugins':
   enable => [
-  	'macvlan',
-	'ipvlan',
+    'macvlan',
+    'ipvlan',
   ]
 }
 ```
