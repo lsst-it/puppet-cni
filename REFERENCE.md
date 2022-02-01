@@ -76,7 +76,7 @@ Default value: `'sha256'`
 
 Data type: `Optional[Array[String]]`
 
-
+Create a symlink from the CNI bin install path to the plugin binary.
 
 Default value: ``undef``
 
