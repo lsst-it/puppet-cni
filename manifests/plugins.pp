@@ -10,6 +10,9 @@
 # @param checksum_type
 #   The digest algorithm used for the checksum string.
 #
+# @param enable
+#   Create a symlink from the CNI bin install path to the plugin binary.
+#
 # @See `puppet/archive` for the list of supported checksum types.
 #
 class cni::plugins (
