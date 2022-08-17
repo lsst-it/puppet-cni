@@ -7,7 +7,7 @@ describe 'cni::plugins::dhcp' do
     context "on #{os}" do
       let(:facts) do
         facts.merge(
-          path: '/bin',
+          path: '/bin'
         )
       end
 
@@ -18,7 +18,7 @@ describe 'cni::plugins::dhcp' do
 
         it do
           is_expected.to contain_systemd__unit_file('cni-dhcp.service').with(
-            content: %r{ExecStart=/opt/cni/bin/dhcp daemon},
+            content: %r{ExecStart=/opt/cni/bin/dhcp daemon}
           ).that_comes_before('Service[cni-dhcp]').that_requires('Systemd::Unit_file[cni-dhcp.socket]')
         end
 
@@ -29,7 +29,7 @@ describe 'cni::plugins::dhcp' do
         it do
           is_expected.to contain_service('cni-dhcp').with(
             ensure: 'running',
-            enable: true,
+            enable: true
           )
         end
       end

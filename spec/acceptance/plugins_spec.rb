@@ -94,7 +94,7 @@ describe 'cni::plugins class' do
           it { is_expected.to be_mode '755' }
         end
       end
-    end  # 0.8.5
+    end
 
     context 'when 0.9.0', :cleanup_opt do
       let(:pp) do
@@ -142,7 +142,7 @@ describe 'cni::plugins class' do
           it { is_expected.to be_mode '755' }
         end
       end
-    end  # 0.9.0
+    end
 
     context 'with (version change)', :cleanup_opt do
       context 'when 0.8.5' do
@@ -171,7 +171,7 @@ describe 'cni::plugins class' do
             it { is_expected.not_to exist }
           end
         end
-      end # 0.8.5
+      end
 
       context 'when 0.9.0' do
         let(:pp) do
@@ -204,9 +204,9 @@ describe 'cni::plugins class' do
             it { is_expected.to exist }
           end
         end
-      end # 0.9.0
-    end # (version change)
-  end # with version params
+      end
+    end
+  end
 
   context 'with enable param', :cleanup_opt do
     let(:pp) do
