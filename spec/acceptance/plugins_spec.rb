@@ -4,7 +4,7 @@ require 'spec_helper_acceptance'
 
 describe 'cni::plugins class' do
   context 'without any parameters', :cleanup_opt do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       include ::cni::plugins
       PP
@@ -49,7 +49,7 @@ describe 'cni::plugins class' do
 
   context 'with verison params' do
     context 'when 0.8.5', :cleanup_opt do
-      let(:pp) do
+      let(:manifest) do
         <<-PP
         class { cni::plugins:
           version       => '0.8.5',
@@ -97,7 +97,7 @@ describe 'cni::plugins class' do
     end
 
     context 'when 0.9.0', :cleanup_opt do
-      let(:pp) do
+      let(:manifest) do
         <<-PP
         class { cni::plugins:
           version       => '0.9.0',
@@ -146,7 +146,7 @@ describe 'cni::plugins class' do
 
     context 'with (version change)', :cleanup_opt do
       context 'when 0.8.5' do
-        let(:pp) do
+        let(:manifest) do
           <<-PP
           class { cni::plugins: }
           PP
@@ -174,7 +174,7 @@ describe 'cni::plugins class' do
       end
 
       context 'when 0.9.0' do
-        let(:pp) do
+        let(:manifest) do
           <<-PP
           class { cni::plugins:
             version       => '0.9.0',
@@ -209,7 +209,7 @@ describe 'cni::plugins class' do
   end
 
   context 'with enable param', :cleanup_opt do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       class { cni::plugins:
         enable => ['dhcp', 'macvlan'],

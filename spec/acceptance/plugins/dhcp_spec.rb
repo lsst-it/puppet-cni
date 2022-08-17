@@ -4,7 +4,7 @@ require 'spec_helper_acceptance'
 
 describe 'cni::plugins::dhcp class' do
   context 'without any parameters', :cleanup_opt do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       class { 'cni::plugins::dhcp': }
       PP

@@ -4,7 +4,7 @@ require 'spec_helper_acceptance'
 
 describe 'cni::plugins::enable define' do
   context 'with macvlan', :cleanup_opt do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       cni::plugins::enable { 'macvlan': }
       PP
