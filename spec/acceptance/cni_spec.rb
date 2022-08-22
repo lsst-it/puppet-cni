@@ -4,7 +4,7 @@ require 'spec_helper_acceptance'
 
 describe 'cni class' do
   context 'without any parameters', :cleanup_opt do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       include cni
       PP
@@ -31,7 +31,7 @@ describe 'cni class' do
   context 'with base_path param' do
     basedir = default.tmpdir('cni')
 
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       class { cni:
         base_path => '#{basedir}',
