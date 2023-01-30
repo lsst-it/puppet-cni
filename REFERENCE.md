@@ -7,13 +7,13 @@
 ### Classes
 
 * [`cni`](#cni): Install Container Network Interface software
-* [`cni::plugins`](#cniplugins): Install CNI reference plugins
-* [`cni::plugins::dhcp`](#cnipluginsdhcp): Install the cni-dhcp service
-* [`cni::plugins::install`](#cnipluginsinstall): private class
+* [`cni::plugins`](#cni--plugins): Install CNI reference plugins
+* [`cni::plugins::dhcp`](#cni--plugins--dhcp): Install the cni-dhcp service
+* [`cni::plugins::install`](#cni--plugins--install): private class
 
 ### Defined types
 
-* [`cni::plugins::enable`](#cnipluginsenable): Enable a CNI plugin binary
+* [`cni::plugins::enable`](#cni--plugins--enable): Enable a CNI plugin binary
 
 ## Classes
 
@@ -25,9 +25,9 @@ Install Container Network Interface software
 
 The following parameters are available in the `cni` class:
 
-* [`base_path`](#base_path)
+* [`base_path`](#-cni--base_path)
 
-##### <a name="base_path"></a>`base_path`
+##### <a name="-cni--base_path"></a>`base_path`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -35,7 +35,7 @@ Base path under which to install software.
 
 Default value: `'/opt/cni'`
 
-### <a name="cniplugins"></a>`cni::plugins`
+### <a name="cni--plugins"></a>`cni::plugins`
 
 Install CNI reference plugins
 
@@ -43,12 +43,12 @@ Install CNI reference plugins
 
 The following parameters are available in the `cni::plugins` class:
 
-* [`version`](#version)
-* [`checksum`](#checksum)
-* [`checksum_type`](#checksum_type)
-* [`enable`](#enable)
+* [`version`](#-cni--plugins--version)
+* [`checksum`](#-cni--plugins--checksum)
+* [`checksum_type`](#-cni--plugins--checksum_type)
+* [`enable`](#-cni--plugins--enable)
 
-##### <a name="version"></a>`version`
+##### <a name="-cni--plugins--version"></a>`version`
 
 Data type: `String`
 
@@ -56,7 +56,7 @@ CNI plugins release version
 
 Default value: `'0.8.5'`
 
-##### <a name="checksum"></a>`checksum`
+##### <a name="-cni--plugins--checksum"></a>`checksum`
 
 Data type: `String`
 
@@ -64,7 +64,7 @@ Release tarball checksum string
 
 Default value: `'bd682ffcf701e8f83283cdff7281aad0c83b02a56084d6e601216210732833f9'`
 
-##### <a name="checksum_type"></a>`checksum_type`
+##### <a name="-cni--plugins--checksum_type"></a>`checksum_type`
 
 Data type: `String`
 
@@ -72,25 +72,25 @@ The digest algorithm used for the checksum string.
 
 Default value: `'sha256'`
 
-##### <a name="enable"></a>`enable`
+##### <a name="-cni--plugins--enable"></a>`enable`
 
 Data type: `Optional[Array[String]]`
 
 Create a symlink from the CNI bin install path to the plugin binary.
 
-Default value: ``undef``
+Default value: `undef`
 
-### <a name="cnipluginsdhcp"></a>`cni::plugins::dhcp`
+### <a name="cni--plugins--dhcp"></a>`cni::plugins::dhcp`
 
 Install the cni-dhcp service
 
-### <a name="cnipluginsinstall"></a>`cni::plugins::install`
+### <a name="cni--plugins--install"></a>`cni::plugins::install`
 
 private class
 
 ## Defined types
 
-### <a name="cnipluginsenable"></a>`cni::plugins::enable`
+### <a name="cni--plugins--enable"></a>`cni::plugins::enable`
 
 Enable a CNI plugin binary
 
