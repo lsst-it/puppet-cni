@@ -1,6 +1,6 @@
 {
   "name": "lsst-cni",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "author": "AURA/LSST/Rubin Observatory",
   "summary": "CNI module",
   "license": "Apache-2.0",
