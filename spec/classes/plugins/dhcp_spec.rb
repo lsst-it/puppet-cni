@@ -30,7 +30,7 @@ describe 'cni::plugins::dhcp' do
           is_expected.to contain_service('cni-dhcp').with(
             ensure: 'running',
             enable: true
-          )
+          ).that_subscribes_to('Cni::Plugins::Enable[dhcp]')
         end
       end
     end

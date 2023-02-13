@@ -17,7 +17,8 @@ class cni::plugins::dhcp {
     content => epp("${module_name}/dhcp/cni-dhcp.service.epp", $epp_vars),
   }
   ~> service { 'cni-dhcp':
-    ensure => 'running',
-    enable => true,
+    ensure    => 'running',
+    enable    => true,
+    subscribe => Cni::Plugins::Enable['dhcp'],
   }
 }
