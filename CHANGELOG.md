@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v2.4.0](https://github.com/lsst-it/puppet-cni/tree/v2.4.0) (2023-01-30)
+## [v2.4.1](https://github.com/lsst-it/puppet-cni/tree/v2.4.1) (2023-02-13)
+
+[Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v2.4.0...v2.4.1)
+
+**Fixed bugs:**
+
+- restart dhcp service when cni plugin files change [\#17](https://github.com/lsst-it/puppet-cni/pull/17) ([jhoblitt](https://github.com/jhoblitt))
+
+## [v2.4.0](https://github.com/lsst-it/puppet-cni/tree/v2.4.0) (2023-01-31)
 
 [Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v2.3.0...v2.4.0)
 
