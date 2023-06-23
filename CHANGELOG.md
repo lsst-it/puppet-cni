@@ -4,7 +4,20 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v2.4.1](https://github.com/lsst-it/puppet-cni/tree/v2.4.1) (2023-02-13)
+## [v3.0.0](https://github.com/lsst-it/puppet-cni/tree/v3.0.0) (2023-06-23)
+
+[Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v2.4.1...v3.0.0)
+
+**Breaking changes:**
+
+- \(plumbing\) drop support for puppet6 [\#20](https://github.com/lsst-it/puppet-cni/pull/20) ([jhoblitt](https://github.com/jhoblitt))
+
+**Implemented enhancements:**
+
+- allow puppet/archive 7.x [\#24](https://github.com/lsst-it/puppet-cni/pull/24) ([jhoblitt](https://github.com/jhoblitt))
+- add support for puppet8 [\#21](https://github.com/lsst-it/puppet-cni/pull/21) ([jhoblitt](https://github.com/jhoblitt))
+
+## [v2.4.1](https://github.com/lsst-it/puppet-cni/tree/v2.4.1) (2023-02-14)
 
 [Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v2.4.0...v2.4.1)
 
