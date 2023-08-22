@@ -3,8 +3,6 @@
 ---
 fixtures:
   forge_modules:
-    stdlib:
-      repo: "puppetlabs/stdlib"
-      ref: "8.6.0"
+    stdlib: "puppetlabs/stdlib"
     archive: "puppet/archive"
     systemd: "puppet/systemd"
