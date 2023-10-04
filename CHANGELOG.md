@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.2.0](https://github.com/lsst-it/puppet-cni/tree/v3.2.0) (2023-10-04)
+
+[Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v3.1.0...v3.2.0)
+
+**Implemented enhancements:**
+
+- allow puppet/systemd 6.x [\#30](https://github.com/lsst-it/puppet-cni/pull/30) ([jhoblitt](https://github.com/jhoblitt))
+
 ## [v3.1.0](https://github.com/lsst-it/puppet-cni/tree/v3.1.0) (2023-08-22)
 
 [Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v3.0.0...v3.1.0)
