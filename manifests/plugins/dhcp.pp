@@ -1,24 +1,12 @@
 #
-# @summary Install the cni-dhcp service
+# @summary Install and enable the cni-dhcp service
 #
 class cni::plugins::dhcp {
   include cni::plugins
+  include cni::plugins::dhcp::service
 
   ensure_resources('cni::plugins::enable', { 'dhcp' => {} })
 
-  $epp_vars = {
-    prog => "${cni::bin_path}/dhcp",
-  }
-
-  systemd::unit_file { 'cni-dhcp.socket':
-    content => epp("${module_name}/dhcp/cni-dhcp.socket.epp"),
-  }
-  -> systemd::unit_file { 'cni-dhcp.service':
-    content => epp("${module_name}/dhcp/cni-dhcp.service.epp", $epp_vars),
-  }
-  ~> service { 'cni-dhcp':
-    ensure    => 'running',
-    enable    => true,
-    subscribe => Cni::Plugins::Enable['dhcp'],
-  }
+  # restart the service if the installed binary changes
+  Cni::Plugins::Enable['dhcp'] ~> Service['cni-dhcp']
 }

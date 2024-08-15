@@ -8,7 +8,8 @@
 
 * [`cni`](#cni): Install Container Network Interface software
 * [`cni::plugins`](#cni--plugins): Install CNI reference plugins
-* [`cni::plugins::dhcp`](#cni--plugins--dhcp): Install the cni-dhcp service
+* [`cni::plugins::dhcp`](#cni--plugins--dhcp): Install and enable the cni-dhcp service
+* [`cni::plugins::dhcp::service`](#cni--plugins--dhcp--service): Enables the the cni-dhcp service
 * [`cni::plugins::install`](#cni--plugins--install): private class
 
 ### Defined types
@@ -82,7 +83,18 @@ Default value: `undef`
 
 ### <a name="cni--plugins--dhcp"></a>`cni::plugins::dhcp`
 
-Install the cni-dhcp service
+Install and enable the cni-dhcp service
+
+### <a name="cni--plugins--dhcp--service"></a>`cni::plugins::dhcp::service`
+
+Installs the cni-dhcp systemd service and enables it to start on boot.
+
+Explicit inclusion of this class is not necessary when using the
+cni::plugins::dhcp class.
+
+This class is intended to be included directly only when it is desirable to enable
+the cni-dhcp service without managing the installation of the cni plugin
+binaries.
 
 ### <a name="cni--plugins--install"></a>`cni::plugins::install`
 
