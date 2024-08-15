@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.4.0](https://github.com/lsst-it/puppet-cni/tree/v3.4.0) (2024-08-15)
+
+[Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v3.3.0...v3.4.0)
+
+**Implemented enhancements:**
+
+- split cni::plugins::dhcp::service out of ::dhcp class [\#37](https://github.com/lsst-it/puppet-cni/pull/37) ([jhoblitt](https://github.com/jhoblitt))
+
 ## [v3.3.0](https://github.com/lsst-it/puppet-cni/tree/v3.3.0) (2024-08-07)
 
 [Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v3.2.0...v3.3.0)
