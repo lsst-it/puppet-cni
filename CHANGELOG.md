@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.5.0](https://github.com/lsst-it/puppet-cni/tree/v3.5.0) (2024-12-18)
+
+[Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v3.4.0...v3.5.0)
+
+**Implemented enhancements:**
+
+- \(metadata.json\) upgrade systemd to v8 [\#44](https://github.com/lsst-it/puppet-cni/pull/44) ([badenerb](https://github.com/badenerb))
+
+**Fixed bugs:**
+
+- \(metadata.json\) revert systemd to v7 [\#43](https://github.com/lsst-it/puppet-cni/pull/43) ([badenerb](https://github.com/badenerb))
+
 ## [v3.4.0](https://github.com/lsst-it/puppet-cni/tree/v3.4.0) (2024-08-15)
 
 [Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v3.3.0...v3.4.0)
