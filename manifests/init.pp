@@ -26,10 +26,10 @@ class cni (
   }
 
   ensure_resources('file', {
-      $base_path    => $stat,
-      $bin_path     => $stat,
-      $plugins_path => $stat + $purge,
-      $dl_path      => $stat,
-      $run_path     => $stat,
+    $base_path    => $stat,
+    $bin_path     => $stat,
+    $plugins_path => $stat + $purge,
+    $dl_path      => $stat,
+    $run_path     => $stat,
   })
 }
