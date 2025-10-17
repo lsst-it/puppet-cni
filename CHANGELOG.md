@@ -4,7 +4,17 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v3.5.1](https://github.com/lsst-it/puppet-cni/tree/v3.5.0) (2024-12-19)
+## [v3.5.2](https://github.com/lsst-it/puppet-cni/tree/v3.5.2) (2025-10-17)
+
+[Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v3.5.1...v3.5.2)
+
+**Implemented enhancements:**
+
+- \(metadata.json\) bump archiver and systemd [\#60](https://github.com/lsst-it/puppet-cni/pull/60) ([badenerb](https://github.com/badenerb))
+- Update actions/labeler action to v6 [\#55](https://github.com/lsst-it/puppet-cni/pull/55) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v5 [\#53](https://github.com/lsst-it/puppet-cni/pull/53) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [v3.5.1](https://github.com/lsst-it/puppet-cni/tree/v3.5.1) (2024-12-19)
 
 [Full Changelog](https://github.com/lsst-it/puppet-cni/compare/v3.5.0...v3.5.1)
 
